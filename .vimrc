@@ -1,7 +1,6 @@
-" -------------------------------------- "
+" --------------------------------------);
 " -------------- PLUGINS  -------------- "
 " -------------------------------------- "
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set nocompatible
 filetype off
@@ -16,36 +15,17 @@ Plugin 'msanders/snipmate.vim'           " snippets
 Plugin 'vim-scripts/cscope_macros.vim'   " cscope bindings
 Plugin 'vim-scripts/OmniCppComplete'     "omni-cpp-complete
 Plugin 'bronson/vim-trailing-whitespace' "Fix whitespace
-Plugin 'tomasr/molokai'                  " molokai colorscheme
+Plugin 'scrooloose/nerdtree'
 
-
-set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/sdl
+set tags+=~/.vim/tags/qt5.7
 set tags+=~/.vim/tags/gl
-
-" OmniCppComplete
-" See http://vim.wikia.com/wiki/C%2B%2B_code_completion for more info how to
-" generate proper ctags
-"let OmniCpp_NamespaceSearch = 1
-"let OmniCpp_GlobalScopeSearch = 1
-"let OmniCpp_ShowAccess = 1
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-" au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-" set completeopt=menuone,menu,longest,preview
 set csto=1
 
-
 let g:ackprg = 'ag --vimgrep'
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 25
 
-
+let mapleader = "\\"
+nnoremap <Leader>t :NERDTreeToggle<Enter>
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
@@ -82,7 +62,9 @@ set lazyredraw
 set expandtab
 set undofile
 "set completeopt-=preview
-set autochdir
+"set autochdir
+set showmatch
+let g:loaded_matchparen=1
 
 "colorscheme jellybeans
 "colorscheme hemisu
@@ -93,3 +75,5 @@ let g:solarized_termcolors=256
 set tags=./tags;/
 set clipboard=unnamedplus
 set ssop=sesdir
+set undodir=~/.vim/undo/
+set csre
