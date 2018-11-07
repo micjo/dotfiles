@@ -1,6 +1,8 @@
 " --------------------------------------);
 " -------------- PLUGINS  -------------- "
 " -------------------------------------- "
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 set nocompatible
 filetype off
@@ -16,6 +18,7 @@ Plugin 'vim-scripts/cscope_macros.vim'   " cscope bindings
 Plugin 'vim-scripts/OmniCppComplete'     "omni-cpp-complete
 Plugin 'bronson/vim-trailing-whitespace' "Fix whitespace
 Plugin 'scrooloose/nerdtree'
+Plugin 'tomasr/molokai'
 
 set tags+=~/.vim/tags/sdl
 set tags+=~/.vim/tags/qt5.7
